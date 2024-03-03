@@ -5,29 +5,29 @@ import cors from "cors"
 const app = express();
 
 
-const whitelist = ['https://play-now-chi.vercel.app/'];
+// const whitelist = ['https://play-now-chi.vercel.app/'];
 
-// Set up CORS options
-const corsOptions = {
-    origin: function (origin, callback) {
-        // Check if the request origin is in the whitelist
-        if (whitelist.indexOf(origin) !== -1 || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    }
-};
-
-// Use CORS middleware with options
-app.use(cors(corsOptions));
-
-// app.use(cors(
-//     {
-//         origin: process.env.CORS_ORIGIN,
-//         credentials: true,
+// // Set up CORS options
+// const corsOptions = {
+//     origin: function (origin, callback) {
+//         // Check if the request origin is in the whitelist
+//         if (whitelist.indexOf(origin) !== -1 || !origin) {
+//             callback(null, true);
+//         } else {
+//             callback(new Error('Not allowed by CORS'));
+//         }
 //     }
-// ))
+// };
+
+// // Use CORS middleware with options
+// app.use(cors(corsOptions));
+
+app.use(cors(
+    {
+        origin: process.env.CORS_ORIGIN,
+        credentials: true,
+    }
+))
 
 app.use(express.json({ limit: "16kb" }))
 app.use(express.urlencoded({ extended: true, limit: "16kb" }))
