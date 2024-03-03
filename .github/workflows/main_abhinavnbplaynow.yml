@@ -59,4 +59,4 @@ jobs:
           app-name: 'abhinavnbplaynow'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4BC796CEA6614FA5B5B1A14FF1737FBA }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AB972DBADFCF4AD3AEA11319F4F2E6F6 }}
