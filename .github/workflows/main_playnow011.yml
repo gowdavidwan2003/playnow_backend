@@ -59,4 +59,4 @@ jobs:
           app-name: 'PlayNow011'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_022B0A35A00644AE8D3E4F17AEC05A50 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D52C70F96B7047848EDFA33864F00EAA }}
