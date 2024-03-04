@@ -131,7 +131,7 @@ const loginUser = asyncHandler(async (req, res) => {
     const options = {
         httpOnly: true,
         secure: true,
-        domain: 'https://play-now-chi.vercel.app', // Replace with your domain
+        domain: 'play-now-chi.vercel.app', // Replace with your domain
         path: '/', // Set to root path
     }
 
@@ -154,7 +154,7 @@ const logoutUser = asyncHandler(async (req, res) => {
     const options = {
         httpOnly: true,
         secure: true,
-        domain: 'https://play-now-chi.vercel.app', // Replace with your domain
+        domain: 'play-now-chi.vercel.app', // Replace with your domain
         path: '/', // Set to root path
     }
 
@@ -183,7 +183,7 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
     const options = {
         httpOnly: true,
         secure: true,
-        domain: 'https://play-now-chi.vercel.app', // Replace with your domain
+        domain: 'play-now-chi.vercel.app', // Replace with your domain
         path: '/', // Set to root path
     }
 
