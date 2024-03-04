@@ -129,9 +129,12 @@ const loginUser = asyncHandler(async (req, res) => {
     const loggedInUser = await User.findById(user._id).select("-password -refreshToken")
 
     const options = {
-        httpOnly: true,
-        secure: true
-    }
+    httpOnly: true,
+    secure: true,
+    domain: 'https://play-now-chi.vercel.app/', // Replace with your domain
+    path: '/', // Set to root path
+}
+
 
     return res.status(200).cookie("accessToken", accessToken, options).cookie("refreshToken", refreshToken, options).json(new ApiResponse(200, { user: loggedInUser, accessToken, refreshToken }, "user logged in successfully"))
 
@@ -149,9 +152,12 @@ const logoutUser = asyncHandler(async (req, res) => {
     })
 
     const options = {
-        httpOnly: true,
-        secure: true
-    }
+    httpOnly: true,
+    secure: true,
+    domain: 'https://play-now-chi.vercel.app/', // Replace with your domain
+    path: '/', // Set to root path
+}
+
 
     return res.status(200).clearCookie("accessToken", options).clearCookie("refreshToken", options).json(new ApiResponse(200, {}, "user logged out"))
 })
@@ -175,9 +181,12 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
     }
 
     const options = {
-        httpOnly: true,
-        secure: true
-    }
+    httpOnly: true,
+    secure: true,
+    domain: 'https://play-now-chi.vercel.app/', // Replace with your domain
+    path: '/', // Set to root path
+}
+
     const { accessToken, newRefreshToken } = await generateAccessAndRefreshToken(user._id)
 
     return res
