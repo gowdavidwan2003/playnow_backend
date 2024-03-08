@@ -131,9 +131,7 @@ const loginUser = asyncHandler(async (req, res) => {
     const options = {
         httpOnly: true,
         secure: true,
-        sameSite: true,
-        domain: 'play-now-chi.vercel.app', // Replace with your domain
-        path: '/', // Set to root path
+        sameSite: true // Set to root path
     }
 
 
