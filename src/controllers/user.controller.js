@@ -130,7 +130,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
     const options = {
         httpOnly: true,
-        sameSite: 'none', // Required for cross-site cookies
+        sameSite: 'strict', // Required for cross-site cookies
         secure: true,     // Required for cross-site cookies over HTTPS
     };
 
