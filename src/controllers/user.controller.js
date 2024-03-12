@@ -130,16 +130,13 @@ const loginUser = asyncHandler(async (req, res) => {
 
     const options = {
         httpOnly: true,
-        sameSite: 'strict', // Required for cross-site cookies
+        sameSite: 'none', // Required for cross-site cookies
         secure: true,     // Required for cross-site cookies over HTTPS
     };
 
     // Set CORS headers
-    res.set({
-        'Access-Control-Allow-Credentials': 'true',
-        'Access-Control-Allow-Origin': 'https://play-now-chi.vercel.app', // Replace with your frontend domain
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization', // Add other required headers if any
-    });
+    res.setHeader("Access-Control-Allow-Origin", "https://icy-desert-0c8b8c010.5.azurestaticapps.net");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
 
 
     return res.status(200).cookie("accessToken", accessToken, options).cookie("refreshToken", refreshToken, options).json(new ApiResponse(200, { user: loggedInUser, accessToken, refreshToken }, "user logged in successfully"))
