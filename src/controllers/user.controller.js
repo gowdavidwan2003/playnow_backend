@@ -135,8 +135,7 @@ const loginUser = asyncHandler(async (req, res) => {
     };
 
     // Set CORS headers
-    res.setHeader("Access-Control-Allow-Origin", "https://www.playitnow.co");
-    res.setHeader("Access-Control-Allow-Credentials", "true");
+
 
 
     return res.status(200).cookie("accessToken", accessToken, options).cookie("refreshToken", refreshToken, options).json(new ApiResponse(200, { user: loggedInUser, accessToken, refreshToken }, "user logged in successfully"))
