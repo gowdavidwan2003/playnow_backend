@@ -94,8 +94,9 @@ const registerUser = asyncHandler(async (req, res) => {
 
     const options = {
         httpOnly: true,
-        secure: true,
-    }
+        sameSite: 'none', // Required for cross-site cookies
+        secure: true,     // Required for cross-site cookies over HTTPS
+    };
 
     return res.status(200).cookie("accessToken", accessToken, options).cookie("refreshToken", refreshToken, options).json(new ApiResponse(200, { createdUser, accessToken, refreshToken }, "user created and logged in successfully"))
 })
