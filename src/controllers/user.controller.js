@@ -135,7 +135,7 @@ const loginUser = asyncHandler(async (req, res) => {
     };
 
     // Set CORS headers
-    res.setHeader("Access-Control-Allow-Origin", "https://icy-desert-0c8b8c010.5.azurestaticapps.net");
+    res.setHeader("Access-Control-Allow-Origin", "https://www.playitnow.co");
     res.setHeader("Access-Control-Allow-Credentials", "true");
 
 
